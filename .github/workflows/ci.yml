@@ -6,8 +6,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.11-slim
 
     steps:
+      - name: Check docker version
+        run: docker version
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -21,4 +26,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest -q
+        run: pytest --html=report.html --self-contained-html
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-report
+          path: report.html
