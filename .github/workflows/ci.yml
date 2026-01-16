@@ -18,14 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          fi
+          pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          if [ -f test_main.py ]; then
-            python test_main.py
-          else
-            pytest
-          fi
+        run: pytest -q
