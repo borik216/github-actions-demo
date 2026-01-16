@@ -10,9 +10,6 @@ jobs:
       image: python:3.11-slim
 
     steps:
-      - name: Check docker version
-        run: docker version
-
       - name: Checkout code
         uses: actions/checkout@v4
 
