@@ -1,2 +1,7 @@
 hello world
 another line
+====================
+hello from master branch
+====================
+Some more text from master
+And more text from master
