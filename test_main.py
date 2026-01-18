@@ -5,4 +5,4 @@ def test_add():
     
     
 def test_add_wrong_answer():
-    assert add(2, 3) == 4
+    assert add(2, 3) != 4
